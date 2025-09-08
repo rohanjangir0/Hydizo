@@ -1,0 +1,134 @@
+/* Section container */
+.services-section {
+  padding: 80px 60px;
+  background: #f9fafb;
+}
+
+/* Header */
+.services-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.badge {
+  display: inline-block;
+  background: #e6f8f0;
+  color: #0d7657;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 24px;
+  border-radius: 20px;
+  margin-bottom: 1px;
+}
+
+.services-header h2 {
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  color: #111;
+  margin-bottom: 12px;
+  width: 11em;
+  margin-left: 2.3em;
+}
+
+.services-header .highlight {
+  color: #0d7657;
+}
+
+.services-header p {
+  font-size: 19px;
+  color: #555;
+  line-height: 1.2;
+}
+
+/* Cards container */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px;
+}
+
+/* Card */
+.service-card {
+  background: #fff;
+  border-radius: 34px;
+  padding: 50px 40px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Icon */
+.service-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Title */
+.service-card h3 {
+  font-size: 25px;
+  font-weight: 200;
+  color: #111;
+  margin-bottom: 34px;
+}
+
+/* Description */
+.service-card p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Points */
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.service-card li {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.service-card li::before {
+  content: "•";
+  color: #0d7657;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Learn More */
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0d7657;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.learn-more:hover {
+  gap: 12px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.learn-more:hover .arrow {
+  transform: translateX(4px);
+}

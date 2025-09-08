@@ -1,0 +1,67 @@
+.getstarted-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #063b35; /* Dark green like MongoDB */
+  border-radius: 150px;
+  padding: 60px;
+  margin: 50px 100px;
+  color: white;
+  overflow: hidden;
+  gap: 40px;
+}
+
+/* Left Content */
+.getstarted-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.getstarted-content h2 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.getstarted-content .highlight {
+  color: #4ade80; /* Light green accent */
+}
+
+.getstarted-content p {
+  font-size: 16px;
+  color: #d1d5db;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* Button */
+.getstarted-btn {
+  background: #22c55e;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.getstarted-btn:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* Right Image */
+.getstarted-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.getstarted-image img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}

@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   background: #063b35; /* Dark green like MongoDB */
-  border-radius: 150px;
+  border-radius: 60px;
   padding: 60px;
   margin: 50px 100px;
   color: white;
@@ -61,7 +61,10 @@
 }
 
 .getstarted-image img {
-  max-width: 100%;
-  border-radius: 16px;
+  /* max-width: 100%; */
+  height: 20rem;
+  width: 25rem;
+  transform: translateX(3em);
+  border-radius: 30px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }

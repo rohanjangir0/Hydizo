@@ -17,10 +17,7 @@ function GetStarted() {
       </div>
 
       <div className="getstarted-image">
-        <img
-          src="/hydizo-dashboard.png" // replace with your actual image path
-          alt="Hydizo Dashboard Preview"
-        />
+        <img src="\public\Schedule.png" alt="schedile.png" />
       </div>
     </section>
   );

@@ -8,56 +8,32 @@ const WhyHydizo = () => {
       title: "Excellence in Every Technology Solution",
       description:
         "Over a decade of delivering enterprise-grade solutions across industries. Our technology is designed to meet today’s needs and scale seamlessly for tomorrow.",
-      stats: {
-        icon: "📈",
-        value: "500+",
-        label: "Projects Delivered",
-        status: "Trusted Globally",
-        trend: "+12% YoY",
-      },
+      icon: "📈",
     },
     {
       title: "Scale Applications with Confidence",
       description:
         "Our platforms are engineered for global performance. With distributed deployments, fault tolerance, and workload isolation, expansion has no limits.",
-      stats: {
-        icon: "🌍",
-        value: "15+",
-        label: "Cloud Regions",
-        status: "Seamless Scaling",
-        trend: "99.9% uptime",
-      },
+      icon: "🌍",
     },
     {
       title: "Smarter, Effortless Deployments",
       description:
         "Infrastructure that adapts to your workloads. Intelligent auto-scaling, built-in monitoring, and zero-downtime upgrades minimize manual effort.",
-      stats: {
-        icon: "⚡",
-        value: "0%",
-        label: "Downtime",
-        status: "Always On",
-        trend: "24/7 Monitoring",
-      },
+      icon: "⚡",
     },
     {
       title: "Proven Results That Drive Growth",
       description:
         "We deliver measurable impact—higher ROI, reduced costs, and faster launches. 500+ success stories across 20+ countries stand as proof.",
-      stats: {
-        icon: "🚀",
-        value: "35%",
-        label: "ROI Improvement",
-        status: "Measured Growth",
-        trend: "Global Clients",
-      },
+      icon: "🚀",
     },
   ];
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 150px", "end end"],
+    offset: ["start 100px", "end end"],
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
@@ -66,6 +42,7 @@ const WhyHydizo = () => {
   });
 
   const progressHeight = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
+  const ballY = useTransform(smoothProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section className="why-hydizo" ref={ref}>
@@ -78,45 +55,33 @@ const WhyHydizo = () => {
           </p>
         </div>
 
-        <div className="timeline">
-          {/* Scroll Progress Line */}
-          <motion.div
-            className="timeline-progress"
-            style={{ height: progressHeight }}
-          />
-          <motion.div
-            className="timeline-glow"
-            style={{ top: progressHeight }}
-          />
-
-          {points.map((point, index) => (
+        <div className="timeline-wrapper">
+          {/* Timeline line */}
+          <div className="timeline-line">
             <motion.div
-              key={index}
-              className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-100px" }}
-            >
-              <div className="timeline-dot" />
-              <div className="timeline-content">
-                <div className="why-text">
-                  <h2>{point.title}</h2>
-                  <p>{point.description}</p>
-                </div>
+              className="timeline-progress"
+              style={{ height: progressHeight }}
+            />
+            <motion.div className="timeline-ball" style={{ top: ballY }} />
+          </div>
 
-                <div className="stat-card glass">
-                  <div className="stat-icon">{point.stats.icon}</div>
-                  <div className="stat-value">{point.stats.value}</div>
-                  <div className="stat-label">{point.stats.label}</div>
-                  <div className="stat-extra">
-                    <span className="chip">{point.stats.status}</span>
-                    <span className="chip secondary">{point.stats.trend}</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          {/* Cards side by side */}
+          <div className="timeline-cards">
+            {points.map((point, index) => (
+              <motion.div
+                key={index}
+                className="timeline-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <div className="card-icon">{point.icon}</div>
+                <h2>{point.title}</h2>
+                <p>{point.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -17,7 +17,7 @@ function GetStarted() {
       </div>
 
       <div className="getstarted-image">
-        <img src="\public\Schedule.png" alt="schedile.png" />
+        <img src="/Schedule.png" alt="schedile.png" />
       </div>
     </section>
   );
